@@ -5,6 +5,7 @@ import 'package:insta_clone/providers/user_provider.dart';
 import 'package:insta_clone/screens/add_post_screen.dart';
 import 'package:insta_clone/screens/feed_screen.dart';
 import 'package:insta_clone/utils/colors.dart';
+import 'package:insta_clone/utils/global_variables.dart';
 import 'package:provider/provider.dart';
 import 'package:insta_clone/models/user.dart' as model;
 
@@ -46,13 +47,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        children: [
-          FeedScreen(),
-          Text('search'),
-          AddPostScreen(),
-          Text('notif'),
-          Text('profile'),
-        ],
+        children: homeScreenItems,
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         onPageChanged: onPageChanged,
